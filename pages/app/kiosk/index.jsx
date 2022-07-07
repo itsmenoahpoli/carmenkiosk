@@ -85,7 +85,7 @@ const KioskPage = () => {
   };
 
   const renderProductItems = (items) => {
-    if (!items.length) {
+    if (!items || !items.length) {
       return (
         <Alert variant="warning">
           <small>No items available for selection</small>
@@ -93,34 +93,36 @@ const KioskPage = () => {
       );
     }
 
-    return items.map((item) => (
-      <Col
-        md={4}
-        className="product-item text-center"
-        key={`${item.id}${item.name}`}
-      >
-        <div className="product-item-content">
-          <div className="mb-3">
-            <Image
-              fluid
-              src={item.image_url ?? "/assets/images/img-placeholder.jpg"}
-              alt="Brgy.pitogo logo"
-              style={{height: "150px", width: "200px"}}
-            />
+    if (items || items.length) {
+      return items.map((item) => (
+        <Col
+          md={4}
+          className="product-item text-center"
+          key={`${item.id}${item.name}`}
+        >
+          <div className="product-item-content">
+            <div className="mb-3">
+              <Image
+                fluid
+                src={item.image_url ?? "/assets/images/img-placeholder.jpg"}
+                alt="Brgy.pitogo logo"
+                style={{height: "150px", width: "200px"}}
+              />
+            </div>
+  
+            <p className="mb-0">
+              <small>{item.name}</small>
+            </p>
+            <p className="mb-0">
+              <small>₱ {item.price}</small>
+            </p>
+            <Button variant="danger" onClick={() => handleAddToCart(item)}>
+              +
+            </Button>
           </div>
-
-          <p className="mb-0">
-            <small>{item.name}</small>
-          </p>
-          <p className="mb-0">
-            <small>₱ {item.price}</small>
-          </p>
-          <Button variant="danger" onClick={() => handleAddToCart(item)}>
-            +
-          </Button>
-        </div>
-      </Col>
-    ));
+        </Col>
+      ));
+    }
   };
 
   const handleUpdateCartItemQty = (idx, method) => {
