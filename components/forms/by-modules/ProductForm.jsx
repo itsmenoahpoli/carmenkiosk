@@ -70,7 +70,7 @@ export const ProductForm = (props) => {
 
     reset({...values, product_category_id: values?.product_category_id ?? ""})
 
-    if (values.hasOwnProperty('product_category_id')) {
+    if (values && values.product_category_id) {
       setSelectedCategory(Number(values.product_category_id))
     }
   }, [])
