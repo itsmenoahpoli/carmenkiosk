@@ -66,7 +66,7 @@ export const DashboardLayout = (props) => {
 
           <div className="copyright-container shadow-lg">
             &#169; &nbsp;
-            <small>CARMEN'S RESTO {getCurrentYear()}</small>
+            <small>CARMEN&apos;S RESTO {getCurrentYear()}</small>
           </div>
         </Container>
       </Container>
