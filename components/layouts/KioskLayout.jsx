@@ -8,7 +8,7 @@ export const KioskLayout = (props) => {
   return (
     <>
       <Head>
-        <title>SISIG BARN CRISPY SISIG &mdash; KIOSK</title>
+      <title>Carmen Resto &mdash; KIOSK</title>
       </Head>
 
       <Container fluid className="kiosk-layout">
