@@ -244,7 +244,7 @@ const KioskPage = () => {
             <div className="text-center">
               <Image
                 fluid
-                src="/assets/images/sisig-barn-logo.png"
+                src="/assets/images/brand-logo.png"
                 alt="Brgy.pitogo logo"
                 height={130}
                 width={130}
