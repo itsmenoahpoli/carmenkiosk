@@ -204,7 +204,7 @@ const OrdersPage = () => {
             <ReactToPrint
               trigger={() => (
                 <Button variant="primary" className="mb-2">
-                  Print Receipt
+                  Print Order Details
                 </Button>
               )}
               content={() => receiptRef.current}
